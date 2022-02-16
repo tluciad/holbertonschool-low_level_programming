@@ -12,6 +12,7 @@ int main(void)
 	printf("Infinite loop incoming :(\n");
 
 	i = 0;
+
 	while (i < 10)
 		{
 		putchar(i);
@@ -20,4 +21,4 @@ int main(void)
 	printf("Infinite loop avoided! \\o/\n");
 
 return (0);
-} /*it seem to work fine */
+} /*it seems to work fine*/
