@@ -5,16 +5,35 @@
 
 void times_table(void)
 {
-	int n;
+	int n = 0;
+	int m;
+	int times_table;
 
-	for (n = 48; n < 58; n++)
+	while (n < 10)
 	{
-		_putchar(n);
-		if (n != 57)
+		_putchar('0');
+		_putchar(',');
+		m = 1;
+
+		while (m < 10)
 		{
-			_putchar(',');
-			_putchar(' ');
+			times_table = n * m;
+			if (times_table >= 10)
+			{
+				_putchar(' ');
+				_putchar((times_table / 10) + '0');
+				_putchar((times_table % 10) + '0');
+			} else
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(times_table + '0');
+			}
+			if (m < 9)
+				_putchar(',');
+			m++;
 		}
-	_putchar('\n');
+		_putchar('\n');
+		n++;
 	}
 }
