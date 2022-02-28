@@ -8,18 +8,18 @@
 */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-		char *sre = dest;
-		unsigned int j = 0;
+	char *sre = dest;
+	unsigned int j = 0;
 
-		if (!dest || !src)
-				return ("error/n");
+	if (!dest || !src)
+		return ("error/n");
 
-		while (j < n)
-		{
-			*dest = *src;
-			dest++;
-			src++;
-			j++;
-		}
-		return (sre);
+	while (j < n)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		j++;
+	}
+	return (sre);
 }
