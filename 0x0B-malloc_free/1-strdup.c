@@ -10,28 +10,28 @@
 
 char *_strdup(char *str)
 {
-char *c;
-char *j;
-int e = 0;
+    char *c;
+    char *j;
+    int e = 0;
 
-if (str == NULL)
-{
-return (NULL);
-}
-while (str[e])
-{
-e++;
-}
-c = malloc(e + 1);
-j = c;
-if (j == NULL)
-{
-return (NULL);
-}
-while (*str)
-{
-*j++ = *str++;
-*j = '\0';
-}
-return (c);
+    if (str == NULL)
+    {
+        return (NULL);
+    }
+    while (str[e])
+    {
+        e++;
+    }
+    c = malloc(e + 1);
+    j = c;
+    if (j == NULL)
+    {
+        return (NULL);
+    }
+    while (*str)
+    {
+        *j++ = *str++;
+        *j = '\0';
+    }
+    return (c);
 }
