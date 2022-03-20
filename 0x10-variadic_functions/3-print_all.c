@@ -3,12 +3,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void p_char(va_list args);
-void p_int(va_list args);
-void p_float(va_list args);
-void p_str(va_list args);
-void print_all(const char *const format, ...);
-
 /**
  * p_char - print char
  * @args: arg
@@ -17,6 +11,7 @@ void p_char(va_list args)
 {
 	printf("%c", va_arg(args, int));
 }
+
 /**
  * p_int - print int
  * @args: arg
@@ -25,6 +20,7 @@ void p_int(va_list args)
 {
 	printf("%d", va_arg(args, int));
 }
+
 /**
  * p_float - print float
  *@args: arg
@@ -33,6 +29,7 @@ void p_float(va_list args)
 {
 	printf("%f", va_arg(args, double));
 }
+
 /**
  * p_str - print str
  * @args: arg
