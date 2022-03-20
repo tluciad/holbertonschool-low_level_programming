@@ -1,7 +1,4 @@
 #include "variadic_functions.h"
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdio.h>
 
 /**
  * p_char - print char
@@ -55,11 +52,10 @@ void p_str(va_list args)
 void print_all(const char *const format, ...)
 {
 	t_print type[] = {
-		{"c", p_char},
-		{"i", p_int},
-		{"f", p_float},
-		{"s", p_str},
-		{NULL, NULL}};
+		{'c', p_char},
+		{'i', p_int},
+		{'f', p_float},
+		{'s', p_str}};
 
 	int i, j;
 	char *separator = "";
@@ -68,11 +64,11 @@ void print_all(const char *const format, ...)
 
 	va_start(args, format);
 
-	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	for (i = 0; format && format[i]; i++)
 	{
 		for (j = 0; j < 4; j++)
 		{
-			if (*(type[j].c) == format[i])
+			if ((type[j].c) == format[i])
 			{
 				printf("%s", separator);
 				type[j].t_func(args);
