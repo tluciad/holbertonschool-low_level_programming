@@ -1,8 +1,9 @@
-#ifndef _VAR_
-#define _VAR_
+#ifndef _FILE_
+#define _FILE_
 
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct print - prints anything

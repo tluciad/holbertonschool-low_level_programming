@@ -41,7 +41,10 @@ void p_str(va_list args)
 	str = va_arg(args, char *);
 
 	if (str == NULL)
-		str = ("(nil)");
+	{
+		printf("%p", str);
+		return;
+	}
 	printf("%s", str);
 }
 
@@ -58,8 +61,7 @@ void print_all(const char *const format, ...)
 		{"s", p_str},
 		{NULL, NULL}};
 
-	int i;
-	int j;
+	int i, j;
 	char *separator = "";
 
 	va_list args;
@@ -70,7 +72,7 @@ void print_all(const char *const format, ...)
 	{
 		for (j = 0; j < 4; j++)
 		{
-			if (format[i] == *(type[j].c))
+			if (*(type[j].c) == format[i])
 			{
 				printf("%s", separator);
 				type[j].t_func(args);
