@@ -12,7 +12,7 @@
  */
 typedef struct print
 {
-	char c;
+	char *c;
 	void (*t_func)(va_list args);
 } t_print;
 
