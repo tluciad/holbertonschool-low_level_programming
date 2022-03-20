@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+
+void p_char(va_list args);
+void p_int(va_list args);
+void p_float(va_list args);
+void p_str(va_list args);
+void print_all(const char *const format, ...);
+
 /**
  * p_char - print char
  * @args: arg
