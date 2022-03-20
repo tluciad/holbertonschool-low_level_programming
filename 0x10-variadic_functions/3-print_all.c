@@ -1,35 +1,33 @@
 #include "variadic_functions.h"
-
+#include <stdio.h>
+#include <stdarg.h>
 /**
  * p_char - print char
- * @args: arg
+ * @args: argument
  */
 void p_char(va_list args)
 {
 	printf("%c", va_arg(args, int));
 }
-
 /**
  * p_int - print int
- * @args: arg
+ *@args: argument
  */
 void p_int(va_list args)
 {
 	printf("%d", va_arg(args, int));
 }
-
 /**
  * p_float - print float
- *@args: arg
+ *@args: argument
  */
 void p_float(va_list args)
 {
 	printf("%f", va_arg(args, double));
 }
-
 /**
  * p_str - print str
- * @args: arg
+ * @args: argument
  */
 void p_str(va_list args)
 {
@@ -38,43 +36,43 @@ void p_str(va_list args)
 	str = va_arg(args, char *);
 
 	if (str == NULL)
-	{
-		printf("%p", str);
-		return;
-	}
+		str = ("(nil)");
 	printf("%s", str);
 }
 
 /**
  * print_all - print all
- * @format: arg
+ * @format: a list of types of arguments passes to the function
  */
 void print_all(const char *const format, ...)
 {
 	t_print type[] = {
-		{'c', p_char},
-		{'i', p_int},
-		{'f', p_float},
-		{'s', p_str}};
+		{"c", p_char},
+		{"i", p_int},
+		{"f", p_float},
+		{"s", p_str}};
 
-	int i, j;
+	int i = 0, j;
 	char *separator = "";
 
 	va_list args;
 
 	va_start(args, format);
 
-	for (i = 0; format && format[i]; i++)
+	while (format && format[i])
 	{
-		for (j = 0; j < 4; j++)
+		j = 0;
+		while (j < 4)
 		{
-			if ((type[j].c) == format[i])
+			if (*(type[j].c) == format[i])
 			{
 				printf("%s", separator);
 				type[j].t_func(args);
 				separator = ", ";
 			}
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
 	va_end(args);
