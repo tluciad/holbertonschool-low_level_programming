@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		if (b[c] == '1')
 		{
-			i += k;
+			i += j;
 		}
 		j *= 2;
 	}
