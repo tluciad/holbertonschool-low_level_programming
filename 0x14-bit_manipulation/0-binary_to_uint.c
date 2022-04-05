@@ -6,13 +6,13 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int ui;
+	unsigned int i;
 	int len, base_two;
 
 	if (!b)
 		return (0);
 
-	ui = 0;
+	i = 0;
 
 	for (len = 0; b[len] != '\0'; len++)
 		;
@@ -26,9 +26,9 @@ unsigned int binary_to_uint(const char *b)
 
 		if (b[len] & 1)
 		{
-			ui += base_two;
+			i += base_two;
 		}
 	}
 
-	return (ui);
+	return (i);
 }
