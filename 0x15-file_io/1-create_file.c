@@ -26,12 +26,17 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	for (nletters = 0; text_content[nletters]; nletters++)
-
-		w_out = write(fd, text_content, nletters);
+	while (text_content[nletters])
+	{
+		nletters++;
+	}
+	w_out = write(fd, text_content, nletters);
 
 	if (w_out == -1)
+	{
+		close(fd);
 		return (-1);
+	}
 
 	close(fd);
 	return (1);
