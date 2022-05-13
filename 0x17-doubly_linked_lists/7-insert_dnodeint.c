@@ -1,12 +1,15 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - function that inserts a new node at a given position
- *
+ * insert_dnodeint_at_index - function that inserts
+ * a new node at a given position
+ * @h: head node
+ * @idx: index
+ * @n: data value
+ * Return: new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *newp = NULL;
-	dlistint_t *temp = NULL;
+	dlistint_t *newp = NULL, *temp = NULL;
 	unsigned int i = 1;
 
 	newp = malloc(sizeof(dlistint_t));
