@@ -9,20 +9,18 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int i = 0;
-	hash_node_t *new;
-	hash_node_t *temp;
+	hash_node_t *new, *temp;
 	char *tmp_val = NULL;
 
 	if (ht == NULL || ht->array == NULL || value == NULL)
-		return(0);
-	
+		return (0);
+
 	if (strlen(key) == 0 || key == NULL)
-		return(0);
-	
-	tmp_val =strdup(value);
-	if(tmp_val == NULL)
-		return(0);
-	
+		return (0);
+
+	tmp_val = strdup(value);
+	if (tmp_val == NULL)
+		return (0);
 	i = key_index((const unsigned char *)key, ht->size);
 
 	temp = ht->array[i];
