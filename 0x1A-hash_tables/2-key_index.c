@@ -7,8 +7,9 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned int hash_index;
+	unsigned long int hash_index;
 
 	hash_index = hash_djb2(key);
-	return (hash_index % size);
+	hash_index = hash_index % size;
+	return (hash_index);
 }
