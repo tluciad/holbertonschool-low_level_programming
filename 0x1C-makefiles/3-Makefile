@@ -14,4 +14,4 @@ oclean:
 fclean: clean oclean
 re: oclean all
 
-#Create your first useful Makefile - variables: CC, SRC, OBJ, NAME
+#Create your first useful Makefile - variables: CC, SRC, OBJ, NAME, RM - rules: all, clean, oclean, fclean, re
