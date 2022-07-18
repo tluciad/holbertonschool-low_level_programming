@@ -1,0 +1,9 @@
+CC = gcc
+SRC = main.c school.c 
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+all: $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
+%.o: %.CC
+	$(CC) -c $< -o $@
+#Create your first useful Makefile - variables: CC, SRC, OBJ, NAME
