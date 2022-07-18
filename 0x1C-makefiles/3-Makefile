@@ -1,0 +1,17 @@
+CC = gcc
+SRC = main.c school.c 
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM = rm
+all: $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
+%.o: %.CC
+	$(CC) -c $< -o $@
+clean: 
+	$(RM) *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean: clean oclean
+re: oclean all
+
+#Create your first useful Makefile - variables: CC, SRC, OBJ, NAME
