@@ -14,4 +14,4 @@ oclean:
 	$(RM) $(OBJ)
 fclean: clean oclean
 re: oclean all
-.PHONY: clean
+.PHONY: all clean oclean fclean re
